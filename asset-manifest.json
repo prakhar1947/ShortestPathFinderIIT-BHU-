@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ShortestPathFinderIIT-BHU-/static/css/main.63073541.css",
+    "main.js": "/ShortestPathFinderIIT-BHU-/static/js/main.8595dd4e.js",
+    "index.html": "/ShortestPathFinderIIT-BHU-/index.html",
+    "main.63073541.css.map": "/ShortestPathFinderIIT-BHU-/static/css/main.63073541.css.map",
+    "main.8595dd4e.js.map": "/ShortestPathFinderIIT-BHU-/static/js/main.8595dd4e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.63073541.css",
+    "static/js/main.8595dd4e.js"
+  ]
+}
