@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../home.css";
 
-const rawApiBase = process.env.REACT_APP_API_BASE || process.env.REACT_APP_API_URL || "http://127.0.0.1:5010";
+const rawApiBase = process.env.REACT_APP_API_BASE || process.env.REACT_APP_API_URL || "";
 const API_BASE = rawApiBase.replace(/\/$/, "");
 
 const Home = () => {
