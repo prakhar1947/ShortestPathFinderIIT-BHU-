@@ -5,7 +5,7 @@ from heapq import heappush, heappop
 from math import hypot
 from flask import Flask, jsonify, abort
 
-app = Flask(__name__, static_folder='../frontend/build', static_url_path='')
+app = Flask(__name__, static_folder='../client/build', static_url_path='')
 
 # Dynamic CORS configuration via FRONTEND_URL or ALLOWED_ORIGINS env variables
 allowed_origins_env = os.environ.get("FRONTEND_URL") or os.environ.get("ALLOWED_ORIGINS")
@@ -295,7 +295,9 @@ GRAPH = build_graph()
 
 
 @app.route('/')
-def hello_world():
+def root():
+    if os.path.exists(os.path.join(app.static_folder, 'index.html')):
+        return app.send_static_file('index.html')
     return 'Server has been started successfully!'
 
 
