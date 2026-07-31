@@ -15,13 +15,13 @@ A brief description of what this project does and who it's for
 #### Get shortest distance between node A and node B 
 
 ```http
-  GET /shortd/<int:A>/<int:B>
+  GET /shortd/<string:A>/<string:B>
 ```
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `source` | `integer` | **Required**|
-| `destination` | `integer` |     **Required**      |
+| `source` | `string` | **Required**|
+| `destination` | `string` |     **Required**      |
 
 
 
