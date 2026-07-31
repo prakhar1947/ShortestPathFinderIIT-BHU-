@@ -30,8 +30,8 @@ const Result = () => {
 
   // Estimated Times
   const walkingTime = Math.ceil(distance / 80);
-  const cycleTime = Math.ceil(distance / 250);
-  const bikeTime = Math.ceil(distance / 420);
+  const cycleTime = Math.ceil(distance / 200);
+  const bikeTime = Math.ceil(distance / 500);
 
   return (
     <div className="result-page">
