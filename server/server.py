@@ -1,3 +1,4 @@
+import os
 from flask_cors import CORS
 from collections import defaultdict
 from heapq import heappush, heappop
@@ -5,16 +6,24 @@ from math import hypot
 from flask import Flask, jsonify, abort
 
 app = Flask(__name__, static_folder='../frontend/build', static_url_path='')
-CORS(
-    app,
-    origins=[
+
+# Dynamic CORS configuration via FRONTEND_URL or ALLOWED_ORIGINS env variables
+allowed_origins_env = os.environ.get("FRONTEND_URL") or os.environ.get("ALLOWED_ORIGINS")
+if allowed_origins_env:
+    origins = [origin.strip() for origin in allowed_origins_env.split(",") if origin.strip()]
+else:
+    origins = [
         "https://shortest-path-finder-delta.vercel.app",
         "http://localhost:3000",
         "http://localhost:3001",
         "http://localhost:3002",
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:3001",
         "http://127.0.0.1:3002",
+        "*"
     ]
-)
+
+CORS(app, origins=origins)
 
 # ---------------------------------------------------------------------------
 # NODES: slug -> (Display Name, x, y)
